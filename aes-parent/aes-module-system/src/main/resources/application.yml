@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: dev
+swagger:
+  production: false
+  basic:
+    enable: false
+    username: jeecg
+    password: jeecg1314
+# 第三方登录
+justauth:
+  enabled: true
+  type:
+    GITHUB:
+      client-id: 0277e675495f14a4a183
+      client-secret: ??
+      redirect-uri: http://sso.test.com:8080/jeecg-boot/thirdLogin/github/callback
+    WECHAT_ENTERPRISE:
+      client-id: wwc2a8c8b19c201bcc
+      client-secret: ??
+      redirect-uri: http://sso.test.com:8080/jeecg-boot/thirdLogin/wechat_enterprise/callback
+      agent-id: 1000002
+    DINGTALK:
+      client-id: dingoa33vjqxrbyidnmgwo
+      client-secret: ？？
+      redirect-uri: http://sso.test.com:8080/jeecg-boot/thirdLogin/dingtalk/callback
+  cache:
+    type: default
+    prefix: 'aes-cache::'
+    timeout: 1h
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: deleted  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
